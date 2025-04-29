@@ -12,9 +12,6 @@
 import { ref } from 'vue'
 import { ElButton } from 'element-plus'
 
-const props = defineProps<{
-  number: number
-}>()
 
 const emit = defineEmits<{
   (e: 'complete', isCorrect: boolean): void

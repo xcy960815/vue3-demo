@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { useStore } from './store'
-import { ElContainer, ElHeader, ElMain, ElAvatar } from 'element-plus'
-// import { User } from '@element-plus/icons-vue'
-
-const store = useStore()
-</script>
-
 <template>
   <div class="app-container">
     <el-container>
@@ -25,15 +17,26 @@ const store = useStore()
   </div>
 </template>
 
+<script setup lang="ts">
+import { useStore } from './store'
+import { ElContainer, ElHeader, ElMain, ElAvatar } from 'element-plus'
+
+const store = useStore()
+</script>
+
 <style lang="less" scoped>
 .app-container {
   height: 100vh;
   background-color: @background-color;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
   .app-header {
     background-color: @background-white;
     box-shadow: @box-shadow-light;
     padding: 0;
+    flex-shrink: 0;
     
     .header-content {
       height: @header-height;
@@ -61,8 +64,17 @@ const store = useStore()
     }
   }
 
+  :deep(.el-container) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   :deep(.el-main) {
-    padding: @spacing-larger;
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 </style>
