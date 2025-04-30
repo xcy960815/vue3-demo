@@ -12,11 +12,6 @@ const router = createRouter({
       path: '/lesson/:id',
       name: 'Lesson',
       component: () => import('../views/Lesson.vue')
-    },
-    {
-      path: '/practice/:type',
-      name: 'Practice',
-      component: () => import('../views/Practice.vue')
     }
   ]
 })
